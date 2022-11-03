@@ -51,3 +51,9 @@ body{
 .section__element{
     cursor: pointer;
 }
+.hidden {
+    position: absolute;
+    visibility: hidden;
+    transform: scale(0);
+    opacity: 0;
+}
