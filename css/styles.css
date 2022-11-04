@@ -19,6 +19,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 15px;
     height: 10%;
     background-color: grey;
     width: 100vw;
@@ -39,7 +40,7 @@ body {
     align-items: center;
     gap: 15px;
     height: 90vh;
-    min-width: 50vw;
+    width: 50vw;
     color: gray;
 }
 
@@ -68,7 +69,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 90vh;
-    min-width: 50vw;
+    width: 50vw;
     color: gray;
     gap: 5px;
 }
