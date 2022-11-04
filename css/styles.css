@@ -11,16 +11,35 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     height: 100vh;
 }
-
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    background-color: grey;
+    width: 100vw;
+}
+.menu__button{
+    width: 100px;
+    background-color: black;
+    color: gray;
+}
+.menu__button:hover{
+    color: white;
+    cursor: pointer;
+}
 .main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    width: 50vw;
+    height: 90vh;
+    min-width: 50vw;
     color: gray;
 }
 
@@ -48,7 +67,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50vw;
+    height: 90vh;
+    min-width: 50vw;
     color: gray;
     gap: 5px;
 }
