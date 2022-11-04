@@ -1,6 +1,8 @@
 const btn = document.querySelector('.main__button');
 const clickCounter = document.querySelector('.main__text');
 const clickBoosters = [...document.querySelectorAll('.section__element')];
+const saveBtn = [...document.querySelectorAll('.menu__button')][0];
+const loadBtn = [...document.querySelectorAll('.menu__button')][1];
 
 let multiply = 1;
 let autoClickAdder = 0;
