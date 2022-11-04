@@ -77,10 +77,3 @@ body {
     align-items: center;
     height: 50px;
 }
-
-.hidden {
-    position: absolute;
-    visibility: hidden;
-    transform: scale(0);
-    opacity: 0;
-}
