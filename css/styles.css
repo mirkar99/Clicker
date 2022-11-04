@@ -12,7 +12,6 @@ body {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    height: 100vh;
 }
 .nav{
     display: flex;
@@ -20,7 +19,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    height: 10%;
+    height: 10vh;
     background-color: grey;
     width: 100vw;
 }
@@ -40,7 +39,7 @@ body {
     align-items: center;
     gap: 15px;
     height: 90vh;
-    width: 50vw;
+    width: 150px;
     color: gray;
 }
 
@@ -68,8 +67,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90vh;
-    width: 50vw;
+    min-height: 250px;
+    width: 200px;
     color: gray;
     gap: 5px;
 }
@@ -97,4 +96,36 @@ body {
     justify-content: center;
     align-items: center;
     height: 50px;
+}
+@media screen and (min-width:400px) {
+    .main{
+        width: 200px;
+    }
+    .section{
+        width: 200px;
+    }
+}
+@media screen and (min-width:600px) {
+    .main{
+        width: 300px;
+    }
+    .section{
+        width: 300px;
+    }
+}
+@media screen and (min-width:800px) {
+    .main{
+        width: 400px;
+    }
+    .section{
+        width: 400px;
+    }
+}
+@media screen and (min-width:1000px) {
+    .main{
+        width: 500px;
+    }
+    .section{
+        width: 500px;
+    }
 }
