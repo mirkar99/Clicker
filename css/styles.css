@@ -70,7 +70,7 @@ body {
     min-height: 250px;
     width: 200px;
     color: gray;
-    gap: 5px;
+    gap: 10px;
 }
 
 .section__element {
@@ -96,6 +96,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 50px;
+    font-size: 18px;
 }
 @media screen and (min-width:400px) {
     .main{
