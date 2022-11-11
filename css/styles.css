@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Oxygen:wght@300&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -94,6 +94,7 @@ body {
 .element__value {
     height: 50px;
     line-height: 50px;
+    font-family: 'Oxygen', sans-serif;
 }
 
 .element__text {
@@ -102,6 +103,7 @@ body {
     align-items: center;
     height: 50px;
     font-size: 18px;
+    font-family: 'Oxygen', sans-serif;
 }
 @media screen and (min-width:400px) {
     .main{
