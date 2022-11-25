@@ -1,8 +1,10 @@
 const btn = document.querySelector('.main__button');
 const clickCounter = document.querySelector('.main__text');
 const clickBoosters = [...document.querySelectorAll('.section__element')];
+/*
 const saveBtn = [...document.querySelectorAll('.menu__button')][0];
 const loadBtn = [...document.querySelectorAll('.menu__button')][1];
+*/
 
 let multiply = 1;
 let autoClickAdder = 0;
@@ -16,7 +18,7 @@ const whenBtnClicked = () => clickCounter.innerText = Number(clickCounter.innerT
 
 setInterval(() => { clickCounter.innerText = Number(clickCounter.innerText) + autoClickAdder; }, 1000);
 
-const save = function () {
+/*const save = function () {
     localStorage.setItem('SaveWasDone', true);
     localStorage.setItem('clickValue', clickCounter.innerText);
     localStorage.setItem('multiplyValue', multiply);
@@ -34,7 +36,7 @@ const load = function () {
     clickBoosters[1].children[0].innerHTML = localStorage.getItem('multiplyClickBoosterAmount');
     clickBoosters[1].children[1].innerHTML = localStorage.getItem('multiplyClickBoosterText');
 }
-}
+} */
 btn.addEventListener('click', () => {
     whenBtnClicked();
 });
@@ -43,7 +45,6 @@ clickBoosters.forEach((el, index) => {
         if (index === 0) {
             if (Number(clickCounter.innerHTML) >= Number(el.children[0].innerHTML)) {
                 let amount = Number(el.children[0].innerHTML);
-                el.children[0].innerHTML = Number(el.children[0].innerHTML) * 2;
                 clickCounterTakeAmount(amount);
                 changeAutoClick();
             }
@@ -53,15 +54,15 @@ clickBoosters.forEach((el, index) => {
                 let amount = Number(el.children[0].innerHTML);
                 clickCounterTakeAmount(amount);
                 changeMultiply();
-                el.children[0].innerHTML = Number(el.children[0].innerHTML) * 2;
-                el.children[1].innerHTML = `Click multiplier x${multiply + 1}`;
             }
         }
     })
 });
+/*
 saveBtn.addEventListener('click', () => {
     save();
 });
 loadBtn.addEventListener('click', () => {
     load();
 })
+*/
