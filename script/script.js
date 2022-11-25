@@ -9,6 +9,7 @@ let autoClickAdder = 0;
 
 const clickCounterTakeAmount = amount => clickCounter.innerText = Number(clickCounter.innerText) - amount;
 const changeMultiply = () => multiply++;
+const changeAutoClick = () => autoClickAdder++;
 
 const whenBtnClicked = () => clickCounter.innerText = Number(clickCounter.innerText) + 1 * multiply;
 
@@ -44,7 +45,7 @@ clickBoosters.forEach((el, index) => {
                 let amount = Number(el.children[0].innerHTML);
                 el.children[0].innerHTML = Number(el.children[0].innerHTML) * 2;
                 clickCounterTakeAmount(amount);
-                autoClickAdder += 1;
+                changeAutoClick();
             }
         }
         if (index === 1) {
