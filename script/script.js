@@ -25,16 +25,24 @@ const save = function () {
     localStorage.setItem('autoClickBoosterAmount', clickBoosters[0].children[0].innerText);
     localStorage.setItem('multiplyClickBoosterAmount', clickBoosters[1].children[0].innerText);
     localStorage.setItem('multiplyClickBoosterText', clickBoosters[1].children[1].innerText);
+    localStorage.setItem('dobuleClickAmount', clickBoosters.find((el) => el.innerText === '1000\nDobule click amount'));
+    localStorage.setItem('tripleClickAmount', clickBoosters.find((el) => el.innerText === '3000\nTriple click amount'));
 }
 const load = function () {
-    if(localStorage.getItem('SaveWasDone')){
-    clickCounter.innerText = localStorage.getItem('clickValue');
-    multiply = Number(localStorage.getItem('multiplyValue'));
-    autoClickAdder = Number(localStorage.getItem('autoClickAdderValue'));
-    clickBoosters[0].children[0].innerText = localStorage.getItem('autoClickBoosterAmount');
-    clickBoosters[1].children[0].innerText = localStorage.getItem('multiplyClickBoosterAmount');
-    clickBoosters[1].children[1].innerText = localStorage.getItem('multiplyClickBoosterText');
-}
+    if (localStorage.getItem('SaveWasDone')) {
+        clickCounter.innerText = localStorage.getItem('clickValue');
+        multiply = Number(localStorage.getItem('multiplyValue'));
+        autoClickAdder = Number(localStorage.getItem('autoClickAdderValue'));
+        clickBoosters[0].children[0].innerText = localStorage.getItem('autoClickBoosterAmount');
+        clickBoosters[1].children[0].innerText = localStorage.getItem('multiplyClickBoosterAmount');
+        clickBoosters[1].children[1].innerText = localStorage.getItem('multiplyClickBoosterText');
+        if(localStorage.getItem('dobuleClickAmount') === 'undefined'){
+            clickBoosters.forEach((el)=> el.innerText === '1000\nDobule click amount' ? el.remove():'false')
+        }
+        if(localStorage.getItem('tripleClickAmount') === 'undefined'){
+            clickBoosters.forEach((el)=> el.innerText === '3000\nTriple click amount' ? el.remove():'false')
+        }
+    }
 }
 btn.addEventListener('click', () => {
     whenBtnClicked();
@@ -46,7 +54,7 @@ clickBoosters.forEach((el, index) => {
                 let amount = Number(el.children[0].innerText);
                 clickCounterTakeAmount(amount);
                 changeAutoClick();
-                el.children[0].innerText = el.children[0].innerText*2
+                el.children[0].innerText = el.children[0].innerText * 2;
             }
         }
         if (index === 1) {
@@ -54,8 +62,24 @@ clickBoosters.forEach((el, index) => {
                 let amount = Number(el.children[0].innerText);
                 clickCounterTakeAmount(amount);
                 changeMultiply();
-                el.children[0].innerText = el.children[0].innerText*2
-                el.children[1].innerText = `Click multiplier x${multiply+1} `
+                el.children[0].innerText = el.children[0].innerText * 2;
+                el.children[1].innerText = `Click multiplier x${multiply + 1} `;
+            }
+        }
+        if (index === 2) {
+            if (Number(clickCounter.innerText) >= Number(el.children[0].innerText)) {
+                let amount = Number(el.children[0].innerText);
+                clickCounterTakeAmount(amount);
+                clickCounter.innerText = Number(clickCounter.innerText) * 2;
+                el.remove();
+            }
+        }
+        if (index === 3) {
+            if (Number(clickCounter.innerText) >= Number(el.children[0].innerText)) {
+                let amount = Number(el.children[0].innerText);
+                clickCounterTakeAmount(amount);
+                clickCounter.innerText = Number(clickCounter.innerText) * 3;
+                el.remove();
             }
         }
     })
